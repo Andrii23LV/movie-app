@@ -1,0 +1,132 @@
+.category-title__wrap {
+    background-image: url('https://wallpaperaccess.com/full/6004261.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    box-shadow: inset 0 -2rem 2rem 0 rgb(0 0 0);
+    padding: 5rem 2rem 1.5rem 2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-title__wrap h1 {
+    letter-spacing: 0.75rem;
+    font-weight: 600;
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(53, 255, 252) 0 0 2rem;
+    border: 0.5rem solid rgb(205, 251, 253);
+    box-shadow: rgb(53, 255, 252) 0 0 1.5rem;
+    padding: 0.75rem;
+    border-radius: 2rem;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.77);
+}
+
+.categories {
+    background-color: black;
+}
+
+.categories__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem;
+}
+
+.category {
+    font-weight: 300;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(53, 255, 252) 0 0 2rem;
+    border: 0.25rem solid rgb(205, 251, 253);
+    padding: 0.75rem;
+    border-radius: 1rem;
+    width: fit-content;
+    background-color: transparent;
+    width: 30vh;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+}
+
+.category:hover {
+    box-shadow: rgb(53, 255, 252) 0 0 1rem;
+    cursor: pointer;
+    background-color: rgb(25, 25, 25);
+}
+
+.category-title {
+    background-image: url('https://r4.wallpaperflare.com/wallpaper/436/228/997/movies-mad-max-the-dark-knight-interstellar-movie-wallpaper-48066d386030acc8d06c814ea8c2f4fa.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 35vh;
+    min-height: 30vh;
+    box-shadow: inset 0 -4rem 2rem 0 rgb(0 0 0);
+    padding: 5rem 2rem 1.5rem 2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-title h1 {
+    font-size: 10vw;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(255, 198, 53) 0 0 1rem;
+    border: 0.25rem solid rgb(253, 243, 205);
+    padding: 0.75rem;
+    border-radius: 1rem;
+}
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 1rem;
+    justify-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: black;
+}
+
+.pagination button {
+    border: 1px solid white;
+    color: rgb(253, 243, 205);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    padding-bottom: 2rem;
+}
+
+.pagination div {
+    color: rgb(253, 243, 205);
+}
+
+.sort {
+    background-color: black;
+    color: white;
+    padding: 0 10%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sort label,
+.sort svg {
+    color: white;
+}
+
+#demo-select-small {
+    color: white;
+    width: 200px;
+}

@@ -1,0 +1,34 @@
+.nav-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5vw;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.725);
+    position: fixed;
+    width: 100%;
+    color: white;
+}
+
+.nav-title h2 {
+    width: 10%;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-elements {
+    display: flex;
+    gap: 10vh;
+    letter-spacing: 0.25rem;
+    font-size: 0.75rem;
+}
+
+.nav-element {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-element-active {
+    color: rgb(241, 147, 106);
+    text-decoration: none;
+}

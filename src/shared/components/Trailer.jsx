@@ -3,19 +3,18 @@ import Youtube from 'react-youtube'
 import { findTrailer } from '../../pages/searchMoviePage/api/findTrailer'
 
 export const Trailer = ({id}) => {
-    const videoId = toString(findTrailer(id));
     return (
         <div>
             <Youtube
-                videoId={videoId}
+                videoId={id}
                 className={"trailer"}
                 containerClassName={"youtube-container amru"}
                 opts = {
                     {
-                        width: '300px',
-                        height: '150px',
+                        width: '100%',
+                        height: '100%',
                         playerVars: {
-                            autoplay: 0,
+                            autoplay: 1,
                             controls: 1,
                             cc_load_policy: 0,
                             fs: 0,

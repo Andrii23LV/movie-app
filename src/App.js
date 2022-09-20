@@ -14,7 +14,6 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/about" element={<MainPage />} />
         <Route path="/upcoming" element={<MainPage />} />
         <Route path="/search-movies" element={<SearchMoviePage />} />
         <Route path="/movie/:id" element={<MoviePage />} />

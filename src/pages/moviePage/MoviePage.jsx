@@ -1,16 +1,24 @@
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getMovieDetails } from "./api/getMovieDetails";
+import './moviepage.css'
+import { Trailer } from "../../shared/components/Trailer";
+import { findTrailer } from "../searchMoviePage/api/findTrailer";
 
 export const MoviePage = () => {
     const location = useLocation();
     const id = location.state;
-    const [item, setItem] = useState(null);
+    const [item, setItem] = useState({});
+    const [playing, setPlaying] = useState(false)
+    const [trailer, setTrailer] = useState(false)
+
+    const myRef = useRef(null)
 
     const getDetail = async () => {
         const response = await getMovieDetails(id);
-        setItem(response.data);
-        console.log(item);
+        const movie = response.data;
+        setItem(movie);
+        console.log(item)
     }
 
     useEffect(() => {
@@ -18,30 +26,55 @@ export const MoviePage = () => {
     }, []);
     
     const getPosterURL = (posterpath) => {
-        return `https://image.tmdb.org/t/p/w154/${posterpath}`
+        return `https://image.tmdb.org/t/p/original/${posterpath}`
     }
+
+    const handleClick = async () => {
+        const response = await findTrailer(item.id);
+        console.log(response.data.results[0].key);
+        setTrailer(response.data.results[0].key);
+        setPlaying(!playing);
+        setTimeout(() => {
+            myRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+        }, 1000)
+    }
+
+    const getColorRating = (vote) => {
+        if (vote > 7.5) {
+            return 'rgb(11, 228, 11)';
+        } else if (vote < 5) {
+            return 'red';
+        } else {
+            return 'yellow';
+        }
+    }
+
+    console.log(item);
     return (
         <>  
-            <section className="movie-title" style={{
-                backgroundImage: `url('https://image.tmdb.org/t/p/original/${item.backdrop_path}')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'top center',
-                backgroundRepeat: 'no-repeat',
-                height: '50vh',
-            }}></section>
-            <section className="movie-wrap">
-                <div className="movie-poster">
-                    <img src={getPosterURL(item.poster_path)} alt={item.title} className='trending__card-img' >
-                    </img>
-                </div>
+            <section className="movie-wrap" style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${getPosterURL(item.backdrop_path)})`
+            }}>
+                <img src={getPosterURL(item.poster_path)} alt={item.original_title} className='movie-poster' >
+                </img>
                 <div className="movie-details">
-                    <h1>{item.title}</h1>
+                    <div className="movie-title">
+                        <h1>{item.original_title}</h1>
+                        <div className='movie-title-vote' style={{ border: `2px solid ${getColorRating(item.vote_average)}`}}><p>{item.vote_average}</p></div>
+                    </div>
                     <h3>{item.tagline}</h3>
                     <p>{item.release_date}</p>
                     <p>Budget: {item.budget}$</p>
                     <p>{item.overview}</p>
+                    <button onClick={handleClick} className='button-trailer'>{playing ? 'close trailer' : 'show trailer'}</button>
                 </div>
             </section>
+            { playing && <div ref={myRef}><Trailer id={trailer}/></div>}       
         </>
     )
 }
+
+
+// #control:hover ~ #target {
+//     background: red;
+//   }

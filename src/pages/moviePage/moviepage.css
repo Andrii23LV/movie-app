@@ -1,0 +1,44 @@
+.movie-wrap {
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 7rem;
+    box-sizing: border-box;
+}
+
+.movie-poster {
+    width: 320px;
+    height: 450px;
+}
+
+.movie-details {
+    width: 700px;
+    color: white;
+}
+
+.movie-details h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.movie-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.movie-title-vote {
+    border-radius: 2rem;
+    width: 50px;
+    height: 35px;
+    background-color: rgb(35, 35, 35);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

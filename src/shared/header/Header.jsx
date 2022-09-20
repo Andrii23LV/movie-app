@@ -9,9 +9,8 @@ export function Header() {
       </div>
       <span className='nav-elements'>
         <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-element-active' : 'nav-element')}>HOME</NavLink>
-        <NavLink to="/about" className={({ isActive }) => (isActive ? 'nav-element-active' : 'nav-element')}>ABOUT US</NavLink>
-        <NavLink to="/upcoming" className={({ isActive }) => (isActive ? 'nav-element-active' : 'nav-element')}>UPCOMING</NavLink>
         <NavLink to="/categories" className={({ isActive }) => (isActive ? 'nav-element-active' : 'nav-element')}>CATEGORIES</NavLink>
+        <NavLink to="/upcoming" className={({ isActive }) => (isActive ? 'nav-element-active' : 'nav-element')}>UPCOMING</NavLink>
       </span>
     </nav>
   )

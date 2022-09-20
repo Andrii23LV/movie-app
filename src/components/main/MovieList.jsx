@@ -18,7 +18,7 @@ export const MovieList = () => {
         className: "center",
         centerMode: true,
         infinite: true,
-        centerPadding: "10px",
+        centerPadding: "25px",
         slidesToShow: 6,
         slidesToScroll: 1,
         speed: 300,

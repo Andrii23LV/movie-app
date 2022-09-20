@@ -4,7 +4,7 @@ import { MovieList } from './MovieList'
 export const Trending = () => {
   return (
     <section className='trending__wrap'>
-        <h2 className='trending__wrap-title'>What's Popular</h2>
+        <h2 className='trending__wrap-title'>Trending</h2>
         <MovieList />
     </section>
   )

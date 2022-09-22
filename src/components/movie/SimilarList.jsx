@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
-import { getPopular } from '../../pages/mainPage/api/getPopular';
+import { getSimilar } from '../../pages/moviePage/api/getSimilar';
 import { MovieCard } from '../../shared/components/MovieCard';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import Slider from "react-slick";
 
-export const MovieList = () => {
+export const SimilarList = (props) => {
     const [movies, setMovies] = useState([]);
-    const fetchAPI = async () => {
-        let response = await getPopular();
+    const fetchAPI = async (id) => {
+        let response = await getSimilar(id);
         let moviesList = response.data.results;
         setMovies(moviesList);
     } 
@@ -18,7 +17,7 @@ export const MovieList = () => {
         className: "center",
         centerMode: true,
         infinite: true,
-        centerPadding: "25px",
+        centerPadding: "15px",
         slidesToShow: 6,
         slidesToScroll: 1,
         speed: 300,
@@ -43,14 +42,18 @@ export const MovieList = () => {
       };
 
     useEffect(() => {
-        fetchAPI();
-    }, [])
+
+        fetchAPI(props.id);
+    }, [props.id])
 
     return (
+        <div className='similar-list'>
+            <h2 className='trending__wrap-title'>Similar movies</h2>
              <Slider {...settings}>
                 {movies.map((movie) => {
                     return <MovieCard key={movie.id} {...movie} />
                 })}
             </Slider>
+        </div>
     )
 }

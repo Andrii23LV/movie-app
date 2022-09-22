@@ -4,6 +4,8 @@ import { getMovieDetails } from "./api/getMovieDetails";
 import './moviepage.css'
 import { Trailer } from "../../shared/components/Trailer";
 import { findTrailer } from "../searchMoviePage/api/findTrailer";
+import { Casts } from "../../components/movie/Casts";
+import { SimilarList } from "../../components/movie/SimilarList";
 
 export const MoviePage = () => {
     const location = useLocation();
@@ -18,7 +20,6 @@ export const MoviePage = () => {
         const response = await getMovieDetails(id);
         const movie = response.data;
         setItem(movie);
-        console.log(item)
     }
 
     useEffect(() => {
@@ -49,32 +50,30 @@ export const MoviePage = () => {
         }
     }
 
-    console.log(item);
     return (
         <>  
             <section className="movie-wrap" style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${getPosterURL(item.backdrop_path)})`
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${getPosterURL(item.backdrop_path)})`
             }}>
-                <img src={getPosterURL(item.poster_path)} alt={item.original_title} className='movie-poster' >
-                </img>
+                <div className="movie-trailer-poster">
+                    <img src={getPosterURL(item.poster_path)} alt={item.original_title} className='movie-poster' >
+                    </img>
+                    <button onClick={handleClick} className='button-trailer'>{playing ? 'close trailer' : 'play trailer'}</button>
+                </div>
                 <div className="movie-details">
                     <div className="movie-title">
                         <h1>{item.original_title}</h1>
                         <div className='movie-title-vote' style={{ border: `2px solid ${getColorRating(item.vote_average)}`}}><p>{item.vote_average}</p></div>
                     </div>
-                    <h3>{item.tagline}</h3>
+                    {item.tagline && <h3>{item.tagline}</h3>}
                     <p>{item.release_date}</p>
-                    <p>Budget: {item.budget}$</p>
-                    <p>{item.overview}</p>
-                    <button onClick={handleClick} className='button-trailer'>{playing ? 'close trailer' : 'show trailer'}</button>
+                    <p className="movie-describtion">{item.overview}</p>
+                    <Casts id={item.id}/>      
                 </div>
             </section>
-            { playing && <div ref={myRef}><Trailer id={trailer}/></div>}       
+            { playing && <div ref={myRef}><Trailer id={trailer}/></div>} 
+            <SimilarList id={item.id}/>
         </>
     )
 }
 
-
-// #control:hover ~ #target {
-//     background: red;
-//   }

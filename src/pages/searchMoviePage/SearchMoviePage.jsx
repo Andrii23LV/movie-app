@@ -45,7 +45,7 @@ export const SearchMoviePage = () => {
                     <div className='search-page__details'>
                         <div className="search-page__details-title">
                             <h2>{movies[0].title}</h2>
-                            <button onClick={fethcTrailer} className='button-trailer'>{playing ? 'close trailer' : 'show trailer'}</button>
+                            <button onClick={fethcTrailer} className='button-trailer'>{playing ? 'close trailer' : 'play trailer'}</button>
                         </div>
                         <p>{movies[0].overview}</p>
                     </div>

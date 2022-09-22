@@ -7,7 +7,7 @@ export const MovieCard = ({poster_path, title, release_date, vote_average, id}) 
 
     const getPosterURL = (posterpath) => {
         if(poster_path !== null){
-            return `https://image.tmdb.org/t/p/w154/${posterpath}`
+            return `https://image.tmdb.org/t/p/original/${posterpath}`
         } else {
             return 'https://d994l96tlvogv.cloudfront.net/uploads/film/poster/poster-image-coming-soon-placeholder-no-logo-500-x-740_26953.png';   
         }
@@ -27,6 +27,7 @@ export const MovieCard = ({poster_path, title, release_date, vote_average, id}) 
         <div className='trending__card'>
             <img src={getPosterURL(poster_path)} alt={title} className='trending__card-img' onClick={(() => {
                 navigate(`/movie/${id}`, { replace: true, state: id});
+                console.log('click')
             })}></img>
             <div className='trending__card-vote' style={{ border: `2px solid ${getColorRating()}`}}><p>{vote_average}</p></div>
             <div className='trending__card-details'>

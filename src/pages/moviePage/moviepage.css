@@ -2,6 +2,7 @@
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
+    min-height: 600px;
     height: 100vh;
     display: flex;
     padding: 2rem;
@@ -12,8 +13,13 @@
 }
 
 .movie-poster {
-    width: 320px;
-    height: 450px;
+    width: 270px;
+    height: 400px;
+}
+
+.movie-trailer-poster {
+    display: flex;
+    flex-direction: column;
 }
 
 .movie-details {
@@ -24,6 +30,10 @@
 .movie-details h1 {
     margin: 0;
     font-size: 3rem;
+}
+
+.movie-describtion {
+    margin: 0.5rem 0;
 }
 
 .movie-title {
@@ -41,4 +51,61 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.casts-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    font-weight: 300;
+}
+
+.casts-wrap {
+    padding: 0 2rem;
+}
+
+.casts-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cast-card {
+    width: 120px;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.cast-card__image {
+    display: inline-block;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.cast-card__details {
+    padding: 0.25rem 0.5rem;
+    height: auto;
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.cast-card__details h3,
+em {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.similar-list {
+    background-color: rgb(17, 17, 17);
+    padding: 1.5rem 2rem;
+    padding-top: 0;
 }

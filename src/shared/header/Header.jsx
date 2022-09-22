@@ -1,9 +1,20 @@
 import { NavLink} from 'react-router-dom'
+import { useState } from 'react';
 import '../header/header.css'
 
 export function Header() {
+  const [color, setColor] = useState(false);
+  const changeColor = () => {
+    if (window.scrollY >= 90) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  }
+
+  window.addEventListener('scroll', changeColor);
   return (
-    <nav className='nav-wrap'>
+    <nav className={color ? 'nav-wrap navigation' : 'nav-wrap'}>
       <div className='nav-title'>
         <h2 className="nav-text">Movies</h2>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Youtube from 'react-youtube'
-import { findTrailer } from '../../pages/searchMoviePage/api/findTrailer'
+import { findTrailer } from '../../pages/searchMoviePage/api/findTrailer';
 
 export const Trailer = ({id}) => {
     return (

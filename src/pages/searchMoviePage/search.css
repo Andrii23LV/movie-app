@@ -61,6 +61,8 @@
     font-weight: 600;
     border-radius: 1.15rem;
     transition: 500ms;
+    width: 200px;
+    margin: 0.75rem auto;
 }
 
 .button-trailer:hover {

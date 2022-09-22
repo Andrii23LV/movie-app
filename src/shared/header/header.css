@@ -1,13 +1,19 @@
 .nav-wrap {
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5vw;
     padding: 1rem 2rem;
-    background-color: rgba(0, 0, 0, 0.725);
     position: fixed;
     width: 100%;
     color: white;
+    transition: .3s ease-in;
+    z-index: 100;
+}
+
+.navigation {
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .nav-title h2 {
@@ -28,7 +34,12 @@
     text-decoration: none;
 }
 
+.nav-element:hover {
+    color: rgb(241, 147, 106);
+}
+
 .nav-element-active {
+    border-bottom: 3px solid rgb(241, 147, 106);
     color: rgb(241, 147, 106);
     text-decoration: none;
 }

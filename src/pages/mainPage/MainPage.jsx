@@ -1,14 +1,23 @@
-import { Title } from "../../components/main/Title"
-import { Trending } from "../../components/main/Trending"
-import { CollectionList } from "../../components/main/CollectionList"
+import {Suspense, lazy} from 'react'
 import '../../pages/mainPage/main.css';
+import '../../shared/styles/loader.css';
+
+const CollectionList = lazy(() => import("../../components/main/CollectionList"));
+const Trending = lazy(() => import("../../components/main/Trending"));
+const Title = lazy(() => import("../../components/main/Title"));
 
 export const MainPage = () => {
   return (
     <>
-        <Title />
-        <Trending />
-        <CollectionList />
+        <Suspense fallback={<></>}>
+          <Title />
+        </Suspense>
+        <Suspense fallback={<div className='loader'>Loading...</div>}>
+          <Trending />
+        </Suspense>
+        <Suspense fallback={<></>}>
+          <CollectionList />
+        </Suspense>
     </>
   )
 }

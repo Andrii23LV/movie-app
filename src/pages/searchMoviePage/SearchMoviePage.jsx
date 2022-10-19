@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import { MovieCard } from '../../shared/components/MovieCard';
 import { findTrailer } from "../searchMoviePage/api/findTrailer";
 import './search.css'
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export const SearchMoviePage = () => {
     const [playing, setPlaying] = useState(false)
@@ -15,13 +14,14 @@ export const SearchMoviePage = () => {
     const myRef = useRef(null)
 
     const location = useLocation();
-    const movies = JSON.parse(location.state);
+    const movies = JSON.parse(location.state.list);
+    const text = location.state.text;
 
     const getPosterURL = (backdrop_path) => {
         return `https://image.tmdb.org/t/p/original/${backdrop_path}`
     }
 
-    const fethcTrailer = async () => {
+    const fetchTrailer = async () => {
         const response = await findTrailer(movies[0].id);
         setTrailer(response.data.results[0].key);
         setPlaying(!playing);
@@ -45,7 +45,7 @@ export const SearchMoviePage = () => {
                     <div className='search-page__details'>
                         <div className="search-page__details-title">
                             <h2>{movies[0].title}</h2>
-                            <button onClick={fethcTrailer} className='button-trailer'>{playing ? 'close trailer' : 'play trailer'}</button>
+                            <button onClick={fetchTrailer} className='button-trailer'>{playing ? 'close trailer' : 'play trailer'}</button>
                         </div>
                         <p>{movies[0].overview}</p>
                     </div>
@@ -75,6 +75,7 @@ export const SearchMoviePage = () => {
                         />
                     </div>
                 }       
+                <p className="search-page__results">Search results for "{text}"</p>
                 <div className="search-page__list">
                     {slice.map((movie) => {
                         return <MovieCard key={movie.id} {...movie} />

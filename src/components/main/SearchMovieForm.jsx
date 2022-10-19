@@ -11,7 +11,7 @@ export const SearchMovieForm = () => {
         const response = await findMovies(data.movie);
         const allMovies = response.data.results;
         const movieList = allMovies.filter(el => el.vote_count > 10);
-        navigate("/search-movies", { replace: true, state: JSON.stringify(movieList) });
+        navigate("/search-movies", { replace: true, state: { list: JSON.stringify(movieList), text: data.movie}});
     }
     return (
         <>

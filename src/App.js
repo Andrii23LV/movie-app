@@ -7,6 +7,7 @@ import { MoviesByCategoryPage } from "./pages/moviesByCategoryPage/MoviesByCateg
 import { Footer } from "./shared/footer/Footer";
 import { Header } from "./shared/header/Header";
 import { Route, Routes } from "react-router-dom";
+import { CollectionPage } from "./pages/collectionPage/CollectionPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/upcoming" element={<MainPage />} />
         <Route path="/search-movies" element={<SearchMoviePage />} />
         <Route path="/movie/:id" element={<MoviePage />} />
+        <Route path="/collection/:id" element={<CollectionPage />} />
         <Route path="/categories" element={<CategoryPage />} />
         <Route path="/categories/:genre" element={<MoviesByCategoryPage />} />
       </Routes>

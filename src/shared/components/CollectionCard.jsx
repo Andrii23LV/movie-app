@@ -1,14 +1,19 @@
 import {getCollection} from '../../pages/mainPage/api/getCollection';
-
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 
-export const Collection = ({id}) => {
+export const CollectionCard = ({id}) => {
     const [ collection,  setCollection ] = useState({});
+    const navigate = useNavigate();
 
     const fetchApi = async () => {
         const response = await getCollection(id);
         const collections = response.data;
         setCollection(collections);
+    }
+
+    const handleClick = () => {
+        navigate(`/collection/${id}`, { replace: true, state: id});
     }
 
     useEffect(() => {
@@ -26,9 +31,9 @@ export const Collection = ({id}) => {
     return (
         <p  className='collection__card-title' 
             style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${getPosterURL(collection.poster_path)})`}} 
-            onClick={(() => {})}
+            onClick={handleClick}
             onMouseOver={changeBackground}
-            >{collection.name}</p>
+            >{collection.name} </p>
     )
 }
 

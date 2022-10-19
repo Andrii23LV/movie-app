@@ -5,8 +5,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-export const SimilarList = (props) => {
+const SimilarList = (props) => {
     const [movies, setMovies] = useState([]);
+    
     const fetchAPI = async (id) => {
         let response = await getSimilar(id);
         let moviesList = response.data.results;
@@ -42,7 +43,6 @@ export const SimilarList = (props) => {
       };
 
     useEffect(() => {
-
         fetchAPI(props.id);
     }, [props.id])
 
@@ -57,3 +57,5 @@ export const SimilarList = (props) => {
         </div>
     )
 }
+
+export default SimilarList;

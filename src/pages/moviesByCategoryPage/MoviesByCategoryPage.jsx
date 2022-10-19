@@ -13,13 +13,14 @@ export const MoviesByCategoryPage = () => {
     const location = useLocation();
     const { name, id } = location.state;
     const [movies, setMovies] = useState([]);
+    const [pagesCount, setPagesCount] = useState();
     const [page, setPage] = useState(1);
     const [sort, setSort] = useState('');
 
     const fetchApi = async () => {
         const response = await getCategoryMovies(id, page, sort);
-        let moviesList = response.data.results
-        console.log(moviesList);
+        let moviesList = response.data.results;
+        setPagesCount(response.data.total_pages)
         setMovies(moviesList);
     }
 
@@ -34,7 +35,6 @@ export const MoviesByCategoryPage = () => {
 
     const handleSortChange = (event) => {
         setSort(event.target.value);
-        console.log(sort)
     }
 
     return (
@@ -71,7 +71,7 @@ export const MoviesByCategoryPage = () => {
                 })}
             </section>
             <div className='pagination'>
-                <Pagination count={100} variant="outlined" color="primary" onChange={handlePageChange} />
+                <Pagination count={pagesCount} variant="outlined" color="primary" onChange={handlePageChange} />
             </div>
         </>
     )

@@ -1,11 +1,12 @@
 import { useLocation } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Suspense, lazy } from "react";
 import { getMovieDetails } from "./api/getMovieDetails";
 import './moviepage.css'
 import { Trailer } from "../../shared/components/Trailer";
 import { findTrailer } from "../searchMoviePage/api/findTrailer";
 import { Casts } from "../../components/movie/Casts";
-import { SimilarList } from "../../components/movie/SimilarList";
+
+const SimilarList = lazy(() => import("../../components/movie/SimilarList"));
 
 export const MoviePage = () => {
     const location = useLocation();
@@ -23,6 +24,7 @@ export const MoviePage = () => {
     }
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         getDetail();
     }, []);
     
@@ -72,7 +74,9 @@ export const MoviePage = () => {
                 </div>
             </section>
             { playing && <div ref={myRef}><Trailer id={trailer}/></div>} 
-            <SimilarList id={item.id}/>
+            <Suspense fallback={<div>Loading...</div>}>
+                <SimilarList id={item.id}/>
+            </Suspense>
         </>
     )
 }

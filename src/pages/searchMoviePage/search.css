@@ -96,3 +96,13 @@
     color: rgb(82, 82, 82);
     cursor: pointer;
 }
+
+.search-page__results {
+    padding: 0 10%;
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+    padding-top: 1rem;
+}

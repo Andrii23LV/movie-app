@@ -35,8 +35,10 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
-    padding: 3rem;
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 75%;
+    margin: 0 auto;
 }
 
 .category {
@@ -44,9 +46,7 @@
     font-size: 1rem;
     color: rgb(255, 255, 255);
     text-shadow: rgb(53, 255, 252) 0 0 2rem;
-    border: 0.25rem solid rgb(205, 251, 253);
     padding: 0.75rem;
-    border-radius: 1rem;
     width: fit-content;
     background-color: transparent;
     width: 30vh;

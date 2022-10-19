@@ -1,0 +1,84 @@
+.collection__wrap {
+    padding: 6rem 3rem 1rem 3rem;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+
+.collection-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.collection-details {
+    padding: 2rem;
+    color: white;
+}
+
+.collection-name h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 2rem rgb(0, 200, 255);
+    margin-top: 0;
+}
+
+
+.collection-movies {
+    background-color: #151515;
+}
+
+.collection-movies-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    padding-top: 0;
+}
+
+.collection-movie-card {
+    border: 1px solid gray;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    max-height: 150px;
+    width: 80%;
+    overflow: hidden;
+    box-shadow: rgb(31, 82, 81) 0 0 1rem;
+}
+
+.collection-movie-card:hover {
+    box-shadow: rgb(25, 195, 192) 0 0 1.5rem;
+    cursor: pointer;
+}
+
+.collection-movie-card__img {
+    max-width: 120px;
+}
+
+.collection-movie-card-details {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.collection-movie-card-details__title {
+    margin: 0;
+    margin-top: 5px;
+}
+
+.collection-movie-card-details__date {
+    color: gray;
+    font-style: italic;
+    margin-top: 0;
+    font-size: 0.75rem;
+}
+
+.collection-movie-card-details__overview {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}

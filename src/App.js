@@ -21,7 +21,7 @@ function App() {
         <Route path="/categories" element={<CategoryPage />} />
         <Route path="/categories/:genre" element={<MoviesByCategoryPage />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

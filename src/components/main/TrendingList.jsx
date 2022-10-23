@@ -24,19 +24,32 @@ export const TrendingList = () => {
         speed: 300,
         responsive: [
             {
-              breakpoint: 1024,
+              breakpoint: 1200,
               settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 4
               }
             },
             {
-              breakpoint: 600,
+              breakpoint: 800,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+              }
+            },
+            {
+              breakpoint: 650,
               settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
-                initialSlide: 2
+              }
+            },
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerPadding: "100px"
               }
             }
           ]

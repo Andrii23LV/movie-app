@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import React, { useState, useEffect, useRef, Suspense, lazy } from "react";
 import { getMovieDetails } from "./api/getMovieDetails";
 import './moviepage.css'
@@ -10,7 +10,8 @@ const SimilarList = lazy(() => import("../../components/movie/SimilarList"));
 
 export const MoviePage = () => {
     const location = useLocation();
-    const id = location.state;
+    const { id } = useParams();
+    const movieId = location.state;
     const [item, setItem] = useState({});
     const [playing, setPlaying] = useState(false)
     const [trailer, setTrailer] = useState(false)
@@ -18,7 +19,7 @@ export const MoviePage = () => {
     const myRef = useRef(null)
 
     const getDetail = async () => {
-        const response = await getMovieDetails(id);
+        const response = await getMovieDetails(movieId);
         const movie = response.data;
         setItem(movie);
     }
@@ -26,7 +27,7 @@ export const MoviePage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
         getDetail();
-    }, []);
+    }, [id]);
     
     const getPosterURL = (posterpath) => {
         return `https://image.tmdb.org/t/p/original/${posterpath}`

@@ -6,7 +6,7 @@ const CollectionList = () => {
     return (
     <section className='collection'>
             <div className="collection__list">
-                <h2>Most popular collections</h2>
+            <h2>Most popular collections</h2>
                 {collections.map((collection) => {
                     return <CollectionCard id={collection} key={collection}/>
                 })}

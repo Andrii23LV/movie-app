@@ -84,7 +84,7 @@ export const SearchMoviePage = () => {
                 <div className="load-more-section">
                     {!buttonHide && <button onClick={() => loadMore()} className='load-more-button'>Load more...</button>}
                 </div>
-            </section> : 'Sorry, no movies found'}
+            </section> : <div className="no-results-error">Sorry, no movies found.</div>}
         </>
     )
 }

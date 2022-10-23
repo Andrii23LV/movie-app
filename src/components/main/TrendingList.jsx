@@ -15,45 +15,45 @@ export const TrendingList = () => {
     } 
 
     const settings = {
-        className: "center",
-        centerMode: true,
-        infinite: true,
-        centerPadding: "25px",
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        speed: 300,
-        responsive: [
-            {
-              breakpoint: 1200,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4
-              }
-            },
-            {
-              breakpoint: 800,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-              }
-            },
-            {
-              breakpoint: 650,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-              }
-            },
-            {
-              breakpoint: 500,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                centerPadding: "100px"
-              }
+      className: "center",
+      centerMode: true,
+      infinite: true,
+      centerPadding: "25px",
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      speed: 300,
+      responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 4
             }
-          ]
-      };
+          },
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            }
+          },
+          {
+            breakpoint: 650,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            }
+          },
+          {
+            breakpoint: 500,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerPadding: "50px"
+            }
+          }
+        ]
+    };
 
     useEffect(() => {
         fetchAPI();

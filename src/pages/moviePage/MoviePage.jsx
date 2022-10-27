@@ -141,7 +141,7 @@ export const MoviePage = () => {
                 >
                 <Box sx={style}>
                     <>
-                        <p>You rating {userRate}/10 <StarIcon size='large' sx={{
+                        <p>Your rating is {userRate}/10 <StarIcon size='large' sx={{
                             color: '#faaf00',
                         }}/></p>
                     </>

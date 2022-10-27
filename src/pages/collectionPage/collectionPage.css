@@ -11,7 +11,6 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    flex-wrap: wrap;
 }
 
 .collection-details {
@@ -48,7 +47,6 @@
     max-height: auto;
     width: 80%;
     overflow: hidden;
-    box-shadow: rgb(31, 82, 81) 0 0 1rem;
     max-width: 1000px;
 }
 
@@ -59,6 +57,9 @@
 
 .collection-movie-card__img {
     max-width: 120px;
+    padding: 10px 0;
+    display: flex;
+    margin: auto;
 }
 
 .collection-movie-card-details {
@@ -90,15 +91,27 @@
     .collection-movie-card {
         width: 95%;
     }
+
+    .collection-title {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
 }
 
 @media (min-width: 300px) and (max-width:599px) {
     .collection-movie-card {
         width: 95%;
-        max-height: 500px;
     }
 
     .collection-movie-card__img {
         max-width: 200px;
+        max-height: 400px;
     }
+
+    .collection-title {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
 }

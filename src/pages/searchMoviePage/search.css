@@ -53,6 +53,14 @@
     height: 100vh;
 }
 
+.button-trailer-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 0;
+}
+
 .button-trailer {
     background-color: transparent;
     border: 0.25rem solid rgb(205, 251, 253);
@@ -64,6 +72,10 @@
     transition: 500ms;
     width: 200px;
     margin: 0.75rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .button-trailer:hover {

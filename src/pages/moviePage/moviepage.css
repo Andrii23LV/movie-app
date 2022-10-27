@@ -21,6 +21,7 @@
 .movie-trailer-poster {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .movie-details {
@@ -39,7 +40,8 @@
 
 .movie-title {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     gap: 1rem;
 }
 
@@ -110,4 +112,11 @@ em {
     background-color: rgb(17, 17, 17);
     padding: 1.5rem 2rem;
     padding-top: 0;
+}
+
+.rating-label {
+    letter-spacing: 5px;
+    color: white;
+    font-size: 1.25rem;
+    margin: 0.25rem;
 }

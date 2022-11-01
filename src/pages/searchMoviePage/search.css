@@ -63,7 +63,7 @@
 
 .button-trailer {
     background-color: transparent;
-    border: 0.25rem solid rgb(205, 251, 253);
+    border: 0.1rem solid rgb(205, 251, 253);
     padding: 0.75rem;
     color: rgba(205, 251, 253, 0.866);
     letter-spacing: 0.25rem;

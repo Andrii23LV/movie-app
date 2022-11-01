@@ -13,6 +13,8 @@ import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { rateMovie } from "./api/rateMovie";
 
 const SimilarList = lazy(() => import("../../components/movie/SimilarList"));
@@ -41,9 +43,9 @@ export const MoviePage = () => {
 
     const [item, setItem] = useState({});
     const [userRate, setUserRate] = useState();
-    const [playing, setPlaying] = useState(false)
-    const [trailer, setTrailer] = useState(false)
-    const [modal, setModal] = useState(false)
+    const [playing, setPlaying] = useState(false);
+    const [trailer, setTrailer] = useState(false);
+    const [modal, setModal] = useState(false);
 
     const myRef = useRef(null)
 
@@ -57,7 +59,7 @@ export const MoviePage = () => {
         window.scrollTo(0, 0);
         getDetail();
     }, [id]);
-    
+
     const getPosterURL = (posterpath) => {
         return `https://image.tmdb.org/t/p/original/${posterpath}`
     }
@@ -120,12 +122,16 @@ export const MoviePage = () => {
                 <div className="movie-details">
                     <div className="movie-title">
                         <h1>{item.original_title}</h1>
-                        <div className='movie-title-vote' style={{ border: `2px solid ${getColorRating(item.vote_average)}`}}>
+                        <div className='movie-title-vote' style={{border: `2px solid ${getColorRating(item.vote_average)}`}}>
                             <p>{item.vote_average}</p>
                         </div>
                     </div>
                     {item.tagline && <h3>{item.tagline}</h3>}
-                    <p>{item.release_date}</p>
+                    <div className="movie-date">
+                        <p className="movie-release"><CalendarMonthIcon />{item.release_date}</p>
+                        <p>|</p>
+                        <p className="movie-title-runtime"><AccessTimeIcon />{item.runtime} minutes</p>
+                    </div>
                     <p className="movie-description">{item.overview}</p>
                     <Casts id={item.id}/>      
                 </div>
@@ -137,7 +143,7 @@ export const MoviePage = () => {
 
             <Modal
                 open={modal}
-                onClose={!modal}
+                onClose={modal}
                 >
                 <Box sx={style}>
                     <>

@@ -6,8 +6,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { Pagination } from '@mui/material';
+import { Menu, Pagination } from '@mui/material';
 import '../categoryPage/categories.css'
+
 
 export const MoviesByCategoryPage = () => {
     const location = useLocation();
@@ -48,20 +49,20 @@ export const MoviesByCategoryPage = () => {
                     <Select
                         labelId="demo-select-small"
                         id="demo-select-small"
-                        value={''}
+                        value={sort}
                         label='Sort by'
                         onChange={handleSortChange}
                         >
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
-                        <MenuItem value={'popularity.desc'}>Popularity</MenuItem>
-                        <MenuItem value={'primary_release_date.desc'}>Release date descening</MenuItem>
-                        <MenuItem value={'primary_release_date.asc'}>Release date ascening</MenuItem>
-                        <MenuItem value={'vote_average.desc'}>Rating descening</MenuItem>
-                        <MenuItem value={'vote_average.asc'}>Rating ascening</MenuItem>
-                        <MenuItem value={'original_title.desc'}>Title A-z</MenuItem>
-                        <MenuItem value={'original_title.asc'}>Title Z-a</MenuItem>
+                            <MenuItem value="">
+                                <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={'popularity.desc'}>Popularity</MenuItem>
+                            <MenuItem value={'primary_release_date.desc'}>Release date descening</MenuItem>
+                            <MenuItem value={'primary_release_date.asc'}>Release date ascening</MenuItem>
+                            <MenuItem value={'vote_average.desc'}>Rating descening</MenuItem>
+                            <MenuItem value={'vote_average.asc'}>Rating ascening</MenuItem>
+                            <MenuItem value={'original_title.desc'}>Title A-z</MenuItem>
+                            <MenuItem value={'original_title.asc'}>Title Z-a</MenuItem>
                     </Select>
                 </FormControl>
             </div>
@@ -76,3 +77,4 @@ export const MoviesByCategoryPage = () => {
         </>
     )
 }
+

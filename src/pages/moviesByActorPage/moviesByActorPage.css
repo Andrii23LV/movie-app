@@ -1,0 +1,74 @@
+.actor-details-wrap {
+    background: black;
+    padding: 5rem;
+}
+
+.actor-details-wrap strong {
+    font-size: 1.15rem;
+    margin-top: 0.25rem;
+}
+
+.actor-details {
+    width: 90%;
+    height: auto;
+    min-height: 600px;
+    display: flex;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    gap: 2rem;
+    background-color: #151515;
+    color: white;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.505);
+}
+
+.actor-biography__biography {
+    text-align: justify;
+}
+
+.actor-details__description {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+.actor-details__description p {
+    margin: 0;
+}
+
+.actor-details__image {
+    width: 250px;
+    height: 370px;
+    border-radius: 1rem;
+}
+
+.actor-movies-list {
+    background-color: black;
+    border-radius: 1rem;
+}
+
+.actor-biography__name {
+    font-weight: 300;
+    font-size: 2rem;
+    margin: 0.1rem 0;
+    margin-top: 0;
+}
+
+.actor-movies-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.actor-movies-list-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.actor-movies-list-pagination button {
+    border: 1px solid white;
+    color: rgb(253, 243, 205);
+}

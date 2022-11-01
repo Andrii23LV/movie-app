@@ -49,7 +49,7 @@ export const TrendingList = () => {
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-              centerPadding: "50px"
+              centerPadding: "75px"
             }
           }
         ]

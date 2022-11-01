@@ -2,6 +2,7 @@ import "./App.css";
 import { MainPage } from "./pages/mainPage/MainPage";
 import { SearchMoviePage } from "./pages/searchMoviePage/SearchMoviePage";
 import { MoviePage } from "./pages/moviePage/MoviePage";
+import { MoviesByActorPage } from "./pages/moviesByActorPage/MoviesByActorPage";
 import { CategoryPage } from "./pages/categoryPage/CategoryPage";
 import { MoviesByCategoryPage } from "./pages/moviesByCategoryPage/MoviesByCategoryPage";
 import { Footer } from "./shared/footer/Footer";
@@ -17,6 +18,10 @@ function App() {
         <Route path="/movie-app" element={<MainPage />} />
         <Route path="/search-movies" element={<SearchMoviePage />} />
         <Route path="/movie/:id" element={<MoviePage />} />
+        <Route
+          path="/movieslist-by-actor/:id"
+          element={<MoviesByActorPage />}
+        />
         <Route path="/collection/:id" element={<CollectionPage />} />
         <Route path="/categories" element={<CategoryPage />} />
         <Route path="/categories/:genre" element={<MoviesByCategoryPage />} />

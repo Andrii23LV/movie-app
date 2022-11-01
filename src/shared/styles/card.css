@@ -9,6 +9,8 @@
     width: 165px;
     height: 242px;
     border-radius: 0.75rem;
+    margin: 15px;
+    margin-bottom: 0;
 }
 
 .trending__card-vote {
